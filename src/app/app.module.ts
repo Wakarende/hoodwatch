@@ -7,13 +7,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NeighbourhoodComponent } from './components/neighbourhood/neighbourhood.component';
 import { BusinessComponent } from './components/business/business.component';
+import { UsersComponent } from './components/users/users.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NeighbourhoodComponent,
-    BusinessComponent
+    BusinessComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
