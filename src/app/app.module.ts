@@ -5,12 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NeighbourhoodComponent } from './components/neighbourhood/neighbourhood.component';
+import { BusinessComponent } from './components/business/business.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    NeighbourhoodComponent
+    NeighbourhoodComponent,
+    BusinessComponent
   ],
   imports: [
     BrowserModule,
