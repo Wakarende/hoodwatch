@@ -1,1 +1,12 @@
 <p>neighbourhood works!</p>
+<button (click)="findNeighbourhood()">Neighbourhood</button>
+
+<div *ngIf="neighbourhood.length>0">
+  <ul *ngFor="let neighbourhood of neighbourhood">
+    <li>post name:{{neighbourhood.neighbourhood_name}}</li>
+    <li>post content: {{neighbourhood.location}}</li>
+    <li>admin: {{neighbourhood.admin}}</li>
+  </ul>
+</div>
+
+

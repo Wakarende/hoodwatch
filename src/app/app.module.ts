@@ -1,8 +1,11 @@
+import { HttpClientModule } from '@angular/common/http';
+import { NeighbourhoodService } from './services/hood/neighbourhood.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NeighbourhoodComponent } from './component/neighbourhood/neighbourhood.component';
+import { NeighbourhoodComponent } from './components/neighbourhood/neighbourhood.component';
+
 
 @NgModule({
   declarations: [
@@ -10,9 +13,10 @@ import { NeighbourhoodComponent } from './component/neighbourhood/neighbourhood.
     NeighbourhoodComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [NeighbourhoodService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
