@@ -1,3 +1,5 @@
+import { NeighbourhoodService } from './../../services/hood/neighbourhood.service';
+import { Neighbourhood } from './../../interfaces/neighbourhood';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NeighbourhoodComponent implements OnInit {
 
-  constructor() { }
+  neighbourhood:Neighbourhood[]=[];
 
+  constructor(private neighbourhoodservice:NeighbourhoodService) { }
+
+  findNeighbourhood() {
+    this.neighbourhoodservice.fetchNeighbourhoodApi().subscribe(
+      (res) => {
+        this.neighbourhood = res
+
+      }, error => {
+        console.error(error)
+      }
+    );
+  }
   ngOnInit(): void {
   }
-
 }
+
