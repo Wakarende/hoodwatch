@@ -13,7 +13,7 @@ export class UsersComponent implements OnInit {
 
   constructor(private userservice: UserService) { }
 
-  findUser() {
+  findUsers() {
     this.userservice.fetchUsersApi().subscribe(
       (res) => {
         this.users = res

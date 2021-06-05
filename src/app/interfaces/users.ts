@@ -1,6 +1,8 @@
 export interface Users {
-  id:any
-  username:string
-  email:string
+  id: any
+  user: string
+  email: string
+  bio: string
+  neighbourhood:string
 }
 

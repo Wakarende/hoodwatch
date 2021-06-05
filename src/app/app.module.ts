@@ -1,3 +1,4 @@
+import { UserService } from './services/users/user.service';
 import { BusinessService } from './services/bizz/business.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NeighbourhoodService } from './services/hood/neighbourhood.service';
@@ -8,7 +9,7 @@ import { AppComponent } from './app.component';
 import { NeighbourhoodComponent } from './components/neighbourhood/neighbourhood.component';
 import { BusinessComponent } from './components/business/business.component';
 import { UsersComponent } from './components/users/users.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,9 +20,11 @@ import { UsersComponent } from './components/users/users.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+
   ],
-  providers: [NeighbourhoodService,BusinessService],
+  providers: [NeighbourhoodService,BusinessService,UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

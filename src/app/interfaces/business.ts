@@ -1,6 +1,6 @@
 export interface Business {
   business_name:string
-  admin:any
+  profile:any
   neighbourhood:string
   business_email:string
 }

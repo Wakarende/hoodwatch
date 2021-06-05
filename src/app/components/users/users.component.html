@@ -1,1 +1,11 @@
 <p>users works!</p>
+<button (click)="findUsers()">Users</button>
+<div *ngIf="users.length>0">
+  <ul *ngFor="let user of users">
+    <li>post name:{{user.user}}</li>
+    <li>post content:{{user.email}}</li>
+    <li>post content:{{user.bio}}</li>
+    <li>admin: {{user.id}}</li>
+  </ul>
+</div>
+
