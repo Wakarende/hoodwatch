@@ -8,31 +8,34 @@
     <li>admin: {{neighbourhood.admin}}</li>
   </ul>
 </div> -->
-
-<div>
-  <div class="submit-form">
-    <div *ngIf="!submitted">
-      <div class="form-group">
-        <label for="neighbourhood_name">Neighbourhood Name</label>
-        <input type="text" class="form-control" id="name" required [(ngModel)]="neighbourhood.neighbourhood_name" name="neighbourhood_name" />
+<div class="container">
+  <div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="neighbourhood_name">Neighbourhood Name</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="neighbourhood.neighbourhood_name"
+            name="neighbourhood_name" />
+        </div>
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input class="form-control" id="location" required [(ngModel)]="neighbourhood.location" name="location" />
+        </div>
+        <div class="form-group">
+          <label for="occupants">No. of occupants</label>
+          <input class="form-control" id="occupants" required [(ngModel)]="neighbourhood.occupants" name="occupants" />
+        </div>
+        <div class="form-group">
+          <label for="admin">user</label>
+          <input class="form-control" id="admin" required [(ngModel)]="neighbourhood.admin" name="admin" />
+        </div>
+        <button (click)="saveNeighbourhood()" class="btn btn-success">Submit</button>
       </div>
-      <div class="form-group">
-        <label for="location">Location</label>
-        <input class="form-control" id="location" required [(ngModel)]="neighbourhood.location" name="location"/>
+      <div *ngIf="submitted">
+        <h4>Tutorial was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newNeighbourhood()">Add</button>
       </div>
-      <div class="form-group">
-        <label for="occupants">No. of occupants</label>
-        <input class="form-control" id="occupants" required [(ngModel)]="neighbourhood.occupants"name="occupants" />
-      </div>
-      <div class="form-group">
-        <label for="admin">user</label>
-        <input class="form-control" id="admin" required [(ngModel)]="neighbourhood.admin" name="admin" />
-      </div>
-      <button (click)="saveNeighbourhood()" class="btn btn-success">Submit</button>
-    </div>
-    <div *ngIf="submitted">
-      <h4>Tutorial was submitted successfully!</h4>
-      <button class="btn btn-success" (click)="newNeighbourhood()">Add</button>
     </div>
   </div>
 </div>
+
