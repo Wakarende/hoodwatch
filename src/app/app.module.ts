@@ -1,3 +1,4 @@
+import { BusinessService } from './services/bizz/business.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NeighbourhoodService } from './services/hood/neighbourhood.service';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,7 @@ import { BusinessComponent } from './components/business/business.component';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [NeighbourhoodService],
+  providers: [NeighbourhoodService,BusinessService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
