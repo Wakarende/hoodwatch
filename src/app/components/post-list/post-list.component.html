@@ -1,10 +1,12 @@
-<p>post-list works!</p>
-
-<div class="col-md-6">
-  <h4>Posts List</h4>
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let post of posts; let i = index" [class.active]="i == currentIndex"
-      (click)="setActivePost(posts, i)"> {{ post.post_name}} </li>
-  </ul>
-  <button class="m-3 btn btn-sm btn-danger" (click)="removeAllPosts()"> Remove All </button>
+<div class="container mt-5">
+  <p class="mt-5">post-list works!</p>
+  <div class="col-md-6">
+    <h4>Posts List</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let post of posts; let i = index" [class.active]="i == currentIndex"
+        (click)="setActivePost(posts, i)"> {{ post.post_name}}, {{post.id}}</li>
+    </ul>
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllPosts()"> Remove All </button>
+  </div>
 </div>
+

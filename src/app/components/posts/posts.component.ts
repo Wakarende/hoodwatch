@@ -10,17 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class PostsComponent implements OnInit {
 
   posts: Posts= {
+    id:Number(''),
     post_name: '',
     post_content: '',
     pub_date: false
   };
   submitted = false;
 
+
+
   constructor(private postsservice:PostsService) { }
 
   ngOnInit(): void {
+    
   }
-
+// Create 
   savePosts(): void {
     const data = {
       post_name: this.posts.post_name,
@@ -40,10 +44,12 @@ export class PostsComponent implements OnInit {
   newPosts(): void {
     this.submitted = false;
     this.posts = {
+      id: Number(''),
       post_name: '',
       post_content: '',
       pub_date: false
     };
   }
+
 }
 

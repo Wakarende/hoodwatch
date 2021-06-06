@@ -13,6 +13,7 @@ import { UsersComponent } from './components/users/users.component';
 import { FormsModule } from '@angular/forms';
 import { PostsComponent } from './components/posts/posts.component';
 import { PostListComponent } from './components/post-list/post-list.component';
+import { PostDetailsComponent } from './components/post-details/post-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PostListComponent } from './components/post-list/post-list.component';
     BusinessComponent,
     UsersComponent,
     PostsComponent,
-    PostListComponent
+    PostListComponent,
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,
