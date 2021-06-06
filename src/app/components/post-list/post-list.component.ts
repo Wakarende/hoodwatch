@@ -36,7 +36,7 @@ export class PostListComponent implements OnInit {
   refreshList(): void {
     this.retrievePosts();
     this.currentPost = undefined;
-    this.currentIndex = -1;
+    this.currentIndex = 0;
   }
 
   setActivePosts(posts: Posts, index: number): void {

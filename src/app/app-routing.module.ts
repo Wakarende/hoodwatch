@@ -7,11 +7,11 @@ import { Routes,RouterModule } from '@angular/router'
 
 const routes: Routes = [
 
-  // { path: '', redirectTo: 'posts', pathMatch: 'full' },
-  { path: 'post/', component: PostsComponent },
+  { path: '', redirectTo: 'neighbourhood', pathMatch: 'full' },
+  { path: 'post', component: PostsComponent },
   { path: 'post/update/:id', component: PostsComponent },
   { path: 'post/delete/:id', component: PostsComponent },
-  { path: '', component: NeighbourhoodComponent },
+  { path: 'neighbourhood', component: NeighbourhoodComponent },
   { path: 'update/:id', component: NeighbourhoodComponent },
   { path: 'delete/:id', component: NeighbourhoodComponent },
   { path: 'business/', component: BusinessComponent },

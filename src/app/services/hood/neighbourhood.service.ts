@@ -1,6 +1,6 @@
 import { Neighbourhood } from './../../interfaces/neighbourhood';
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 
@@ -12,8 +12,8 @@ export class NeighbourhoodService {
 
   url ='http://127.0.0.1:8000/api/neighbourhood/'
   Updateurl ='http://127.0.0.1:8000/api/neighbourhood/update/'
-  Deleteurl = 'http://127.0.0.1:8000/api/neighbourhood/delete/'
-  httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+  deleteUrl = 'http://127.0.0.1:8000/api/neighbourhood/delete/'
+  
 
   constructor(private http:HttpClient) { }
 
@@ -30,14 +30,21 @@ export class NeighbourhoodService {
     return this.http.put(`${this.Updateurl}${id}/`,neighbourhood)
   }
 
-  delete(id:any) {
-    return this.http.delete(`${this.Deleteurl}/${id}`);
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${this.deleteUrl}/${id}`);
   }
 
-  
-  
-  // deleteAll():Observable<any>{
-  //   return this.http.delete(this.url)
-  // }
+  deleteAll(): Observable<any> {
+    return this.http.delete(this.deleteUrl);
+  }
+
+  findByName(neighbourhood_name: any): Observable<any> {
+    return this.http.get(`${this.url}?neighbourhood_name=${neighbourhood_name}`);
+  }
 }
+
+
+
+
+
 

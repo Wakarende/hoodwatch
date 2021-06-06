@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NeighbourhoodService } from './services/hood/neighbourhood.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NeighbourhoodComponent } from './components/neighbourhood/neighbourhood.component';
 import { BusinessComponent } from './components/business/business.component';
@@ -29,7 +29,8 @@ import { PostDetailsComponent } from './components/post-details/post-details.com
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    AppRoutingModule
 
 
   ],

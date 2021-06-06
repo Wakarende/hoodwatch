@@ -28,36 +28,40 @@
     <input type="text" name="description" id="description" ngModel placeholder="description">
     <button type="submit">Update Neighbourhood</button>
   </form> 
-
-  
-<!-- <div class="container">
-  <div>
-    <div class="submit-form">
-      <div *ngIf="!submitted">
-        <div class="form-group">
-          <label for="neighbourhood_name">Neighbourhood Name</label>
-          <input type="text" class="form-control" id="name" required [(ngModel)]="neighbourhood.neighbourhood_name"
-            name="neighbourhood_name" />
-        </div>
-        <div class="form-group">
-          <label for="location">Location</label>
-          <input class="form-control" id="location" required [(ngModel)]="neighbourhood.location" name="location" />
-        </div>
-        <div class="form-group">
-          <label for="occupants">No. of occupants</label>
-          <input class="form-control" id="occupants" required [(ngModel)]="neighbourhood.occupants" name="occupants" />
-        </div>
-        <div class="form-group">
-          <label for="admin">user</label>
-          <input class="form-control" id="admin" required [(ngModel)]="neighbourhood.admin" name="admin" />
-        </div>
-        <button (click)="saveNeighbourhood()" class="btn btn-success">Submit</button>
-      </div>
-      <div *ngIf="submitted">
-        <h4>Tutorial was submitted successfully!</h4>
-        <button class="btn btn-success" (click)="newNeighbourhood()">Add</button>
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <div class="input-group-append">
       </div>
     </div>
   </div>
-</div> -->
+  <div class="col-md-6">
+    <h4>Neighbourhood  List</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let neighbourhood of neighbourhood; let i = index" [class.active]="i == currentIndex"
+        (click)="setActiveNeighbourhood(posts, i)"> {{ neighbourhood.neighbourhood_name}} </li>
+    </ul>
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllNeighbourhoods()"> Remove All </button>
+  </div>
+</div>
+<div class="col-md-6">
+  <div *ngIf="currentNeighbourhood">
+    <h4>Tutorial</h4>
+    <div>
+      <label><strong>Title:</strong></label> {{ currentNeighbourhood.neighbourhood_name}} </div>
+    <div>
+      <label><strong>Description:</strong></label> {{ currentNeighbourhood.description }} </div>
+    <div>
+      <label><strong>Status:</strong></label> {{ currentPost.pub_date ? "Published" : "Pending" }} </div>
+    <div>
+      <label><strong>Title:</strong></label> {{ currentNeighbourhood.occupants}} 
+    </div>
+    
+    <a class="badge badge-warning" routerLink="/update/{{currentNeighbourhood.id}}"> Edit </a>
+  </div>
+  <div *ngIf="!currentNeighbourhood">
+    <br />
+    <p>Please click on a Tutorial...</p>
+  </div>
+</div>
 
