@@ -1,0 +1,22 @@
+<p>posts works!</p>
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="post_name" required [(ngModel)]="posts.post_name" name="post_name" />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input class="form-control" id="post_content" required [(ngModel)]="posts.post_content" name="post_content" />
+      </div>
+      <button (click)="savePosts()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Tutorial was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newPosts()">Add</button>
+    </div>
+  </div>
+</div>
+
+

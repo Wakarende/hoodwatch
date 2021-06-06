@@ -5,14 +5,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-neighbourhood',
   templateUrl: './neighbourhood.component.html',
-  styleUrls: ['./neighbourhood.component.css']
+  styleUrls: ['./neighbourhood.component.css'],
+  providers: [NeighbourhoodService]
 })
 
 export class NeighbourhoodComponent implements OnInit {
    
 
   neighbourhood:Neighbourhood[]=[];
-  
+ 
 
   constructor(private neighbourhoodservice:NeighbourhoodService) {
   
@@ -43,6 +44,18 @@ export class NeighbourhoodComponent implements OnInit {
       console.warn("result",result)
     })
     console.warn(id)
+  }
+  
+  // delete 
+  deleteNeighbourhood(id:any){
+    this.neighbourhoodservice.delete(id).subscribe(
+        response => {
+          console.log(response);
+          // this.router.navigate(['/tutorials']);
+        },
+        error => {
+          console.log(error);
+        });
   }
 }
 

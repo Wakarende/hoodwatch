@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { UserService } from './services/users/user.service';
 import { BusinessService } from './services/bizz/business.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,18 +11,24 @@ import { NeighbourhoodComponent } from './components/neighbourhood/neighbourhood
 import { BusinessComponent } from './components/business/business.component';
 import { UsersComponent } from './components/users/users.component';
 import { FormsModule } from '@angular/forms';
+import { PostsComponent } from './components/posts/posts.component';
+import { PostListComponent } from './components/post-list/post-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NeighbourhoodComponent,
     BusinessComponent,
-    UsersComponent
+    UsersComponent,
+    PostsComponent,
+    PostListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule
+
 
   ],
   providers: [NeighbourhoodService,BusinessService,UserService],
