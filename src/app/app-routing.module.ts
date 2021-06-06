@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'neighbourhood', component: NeighbourhoodComponent },
   { path: 'update/:id', component: NeighbourhoodComponent },
   { path: 'delete/:id', component: NeighbourhoodComponent },
-  { path: 'business/', component: BusinessComponent },
+  { path: 'business', component: BusinessComponent },
   { path: 'business/update/:id', component: BusinessComponent },
   { path: 'business/delete/:id', component: BusinessComponent },
 

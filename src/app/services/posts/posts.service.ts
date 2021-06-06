@@ -10,6 +10,9 @@ import { Injectable } from '@angular/core';
 export class PostsService {
 
   url = 'http://127.0.0.1:8000/api/post/'
+  updateUrl = 'http://127.0.0.1:8000/api/post/update'
+  deleteUrl = 'http://127.0.0.1:8000/api/post/delete'
+
   constructor(private http:HttpClient) { }
 
   getAll():Observable<Posts[]>{
@@ -24,11 +27,11 @@ export class PostsService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${this.url}/${id}`, data);
+    return this.http.put(`${this.updateUrl}/${id}`, data);
   }
 
   delete(id: any): Observable<any> {
-    return this.http.delete(`${this.url}/${id}`);
+    return this.http.delete(`${this.deleteUrl}/${id}`);
   }
 
   deleteAll(): Observable<any> {

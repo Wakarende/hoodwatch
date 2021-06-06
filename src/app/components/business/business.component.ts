@@ -23,8 +23,24 @@ export class BusinessComponent implements OnInit {
       }
     );
   }
+
+  onSubmit(business: any) {
+    this.businessservice.create(business).subscribe((result) => {
+      console.warn("result", result)
+    })
+    console.warn(business)
+  }
+  // update 
+  updateBusiness(id: any, business:Business) {
+    this.businessservice.update(id, business).subscribe((result) => {
+      console.warn("result", result)
+    })
+    console.warn(id)
+  }
+
   ngOnInit(): void {
   }
+  
   
 
 }

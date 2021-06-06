@@ -10,4 +10,22 @@
   </ul>
 </div>
 
-
+<!-- Create Business  -->
+<div>
+  <form #businessPost="ngForm" (ngSubmit)="onSubmit(businessPost.value)" method="POST">
+    <input type="text" name="business_name" id="business_name" ngModel placeholder="business_name">
+    <input type="text" name="business_email" id="business_email" ngModel placeholder="business_email">
+    <input type="number" name="neighbourhood" id="neighbourhood" ngModel placeholder="neighbourhood">
+    <button type="submit">Add Business</button>
+  </form>
+</div>
+<!-- End Business  -->
+<!-- Update business  -->
+<form #updatebusiness="ngForm"
+  (ngSubmit)="updateBusiness(updatebusiness.value.id,updatebusiness.value)" method="POST">
+  <input type="text" name="business_name" id="business_name" ngModel placeholder="business_name">
+  <input type="text" name="business_email" id="business_email" ngModel placeholder="business_email">
+  <input type="number" name="neighbourhood" id="neighbourhood" ngModel placeholder="neighbourhood">
+  <button type="submit">Update Business</button>
+</form>
+<!-- End Update Business  -->
