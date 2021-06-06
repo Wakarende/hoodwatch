@@ -1,14 +1,35 @@
 <p>neighbourhood works!</p>
-<!-- <button (click)="findNeighbourhood()">Neighbourhood</button>
+<button (click)="findNeighbourhood()">Neighbourhood</button>
 
 <div *ngIf="neighbourhood.length>0">
   <ul *ngFor="let neighbourhood of neighbourhood">
     <li>post name:{{neighbourhood.neighbourhood_name}}</li>
     <li>post content: {{neighbourhood.location}}</li>
-    <li>admin: {{neighbourhood.admin}}</li>
+    <li>occupants: {{neighbourhood.occupants}}</li>
+    <li>description: {{neighbourhood.description}}</li>
   </ul>
-</div> -->
-<div class="container">
+</div>
+
+<form #neighbourhoodPost="ngForm" (ngSubmit)="onSubmit(neighbourhoodPost.value)" method="POST">
+  <input type="text" name="neighbourhood_name" id="neighbourhood_name" ngModel placeholder="neighbourhood_name">
+  <input type="text" name="location" id="location" ngModel placeholder="location">
+  <input type="number" name="occupants" id="occupants" ngModel placeholder="occupants">
+  <input type="text" name="description" id="description" ngModel placeholder="description">
+
+  <button type="submit">Add Neighbourhood</button>
+</form>
+
+  <form #updateneighbourhood="ngForm"
+    (ngSubmit)="updateNeighbourhood(updateneighbourhood.value.id,updateneighbourhood.value)" method="POST">
+    <input type="number" name="id" id="id" ngModel placeholder="id">
+    <input type="text" name="neighbourhood_name" id="neighbourhood_name" ngModel placeholder="neighbourhood_name">
+    <input type="text" name="location" id="location" ngModel placeholder="location">
+    <input type="number" name="occupants" id="occupants" ngModel placeholder="occupants">
+    <input type="text" name="description" id="description" ngModel placeholder="description">
+    <button type="submit">Update Neighbourhood</button>
+  </form> 
+
+<!-- <div class="container">
   <div>
     <div class="submit-form">
       <div *ngIf="!submitted">
@@ -37,5 +58,5 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 

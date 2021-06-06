@@ -11,14 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class NeighbourhoodComponent implements OnInit {
    
 
-  // neighbourhood:Neighbourhood[]=[];
-  neighbourhood:Neighbourhood={
-    neighbourhood_name:'',
-    location:'',
-    occupants: '',
-    admin: '',
-  };
-  submitted=false
+  neighbourhood:Neighbourhood[]=[];
+  
 
   constructor(private neighbourhoodservice:NeighbourhoodService) {
   
@@ -26,44 +20,29 @@ export class NeighbourhoodComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // findNeighbourhood() {
-  //   this.neighbourhoodservice.fetchNeighbourhoodApi().subscribe(
-  //     (res) => {
-  //       this.neighbourhood = res
+  findNeighbourhood() {
+    this.neighbourhoodservice.fetchNeighbourhoodApi().subscribe(
+      (res) => {
+        this.neighbourhood = res
 
-  //     }, error => {
-  //       console.error(error)
-  //     }
-  //   );
-  // }
-
-  saveNeighbourhood():void{
-    const data={
-      neighbourhood_name: this.neighbourhood.neighbourhood_name,
-      location: this.neighbourhood.location
-    };
-
-    this.neighbourhoodservice.create(data)
-    .subscribe(
-      response => {
-        console.log(response)
-        this.submitted = true;
-      },
-      error =>{
-        console.log(error);
+      }, error => {
+        console.error(error)
       }
     );
   }
-
-  newNeighbourhood(): void{
-    this.submitted=false;
-    this.neighbourhood={
-      neighbourhood_name:'',
-      location:'',
-      occupants: '', 
-      admin:'',
-    };
+// create 
+  onSubmit(neighbourhood:any){
+    this.neighbourhoodservice.create(neighbourhood).subscribe((result) =>{
+      console.warn("result",result)
+    })
+    console.warn(neighbourhood)
   }
-
+// update 
+  updateNeighbourhood(id:any, neighbourhood:Neighbourhood){
+    this.neighbourhoodservice.update(id,neighbourhood).subscribe((result)=>{
+      console.warn("result",result)
+    })
+    console.warn(id)
+  }
 }
 

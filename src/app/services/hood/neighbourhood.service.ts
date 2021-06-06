@@ -1,7 +1,8 @@
+import { Neighbourhood } from './../../interfaces/neighbourhood';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Neighbourhood } from '../../interfaces/neighbourhood'
+
 
 
 @Injectable({
@@ -10,6 +11,7 @@ import { Neighbourhood } from '../../interfaces/neighbourhood'
 export class NeighbourhoodService {
 
   url ='http://127.0.0.1:8000/api/neighbourhood/'
+  Updateurl ='http://127.0.0.1:8000/api/neighbourhood/update/'
   constructor(private http:HttpClient) { }
 
   fetchNeighbourhoodApi(): Observable<Neighbourhood[]> {
@@ -17,11 +19,16 @@ export class NeighbourhoodService {
 
   }
 
-  create(data:any):Observable<any>{
-    return this.http.post(this.url,data);
+  create(neighbourhood: any) {
+    return this.http.post(this.url, neighbourhood);
   }
-  deleteAll():Observable<any>{
-    return this.http.delete(this.url)
+
+  update(id:any, neighbourhood:Neighbourhood){
+    return this.http.put(`${this.Updateurl}${id}/`,neighbourhood)
   }
+
+  // deleteAll():Observable<any>{
+  //   return this.http.delete(this.url)
+  // }
 }
 

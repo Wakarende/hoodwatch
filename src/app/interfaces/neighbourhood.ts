@@ -1,6 +1,7 @@
 export interface Neighbourhood {
   location:string
   neighbourhood_name:string
-  occupants:any
-  admin:any
+  occupants:number
+  description:string
+  // admin:any
 }
