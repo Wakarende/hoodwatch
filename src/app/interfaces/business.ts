@@ -1,7 +1,8 @@
 export interface Business {
   business_name?:string
   // profile?:any
-  neighbourhood?:string
+  // neighbourhood?:any
   business_email?:string
+  published?:boolean
 }
 

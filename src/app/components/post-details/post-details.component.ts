@@ -1,7 +1,7 @@
 import { PostsService } from './../../services/posts/posts.service';
 import { Posts } from './../../interfaces/posts';
 import { Component, OnInit } from '@angular/core';
-
+import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-post-details',
   templateUrl: './post-details.component.html',
@@ -10,20 +10,24 @@ import { Component, OnInit } from '@angular/core';
 export class PostDetailsComponent implements OnInit {
 
   currentPosts: Posts= {
-    id: Number(''),
     post_name: '',
     post_content: '',
     pub_date: false
   };
   message = '';
 
-  constructor(private postsservice: PostsService) { }
+  constructor(
+    private postsservice: PostsService,
+    private route: ActivatedRoute,
+    private router: Router)
+     { }
 
   ngOnInit(): void {
     this.message = '';
+    this.getPosts(this.route.snapshot.paramMap.get('id'));
   }
 
-  getPosts(id: number): void {
+  getPosts(id: any): void {
     this.postsservice.get(id)
       .subscribe(
         data => {
@@ -71,6 +75,7 @@ export class PostDetailsComponent implements OnInit {
       .subscribe(
         response => {
           console.log(response);
+          this.router.navigate(['/post']);
         },
         error => {
           console.log(error);

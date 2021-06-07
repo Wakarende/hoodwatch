@@ -3,44 +3,47 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
+const url = 'http://127.0.0.1:8000/api/business/'
+const updateUrl = 'http://127.0.0.1:8000/api/business/update'
+const deleteUrl = 'http://127.0.0.1:8000/api/business/delete'
+
 @Injectable({
   providedIn: 'root'
 })
 export class BusinessService {
-  url = 'http://127.0.0.1:8000/api/business/'
-  updateUrl = 'http://127.0.0.1:8000/api/business/update'
-  deleteUrl = 'http://127.0.0.1:8000/api/business/delete'
+  
 
   constructor(private http: HttpClient) { }
 
-  fetchBusinessApi(): Observable<Business[]> {
-    return this.http.get<Business[]>(this.url);
+  getAll(): Observable<Business[]> {
+    return this.http.get<Business[]>(url);
 
   }
   get(id: any): Observable<Business> {
-    return this.http.get(`${this.url}/${id}`);
+    return this.http.get(`${url}/${id}`);
   }
 
   create(data: any): Observable<any> {
-    return this.http.post(this.url, data);
+    return this.http.post(url, data);
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${this.updateUrl}/${id}`, data);
+    return this.http.put(`${updateUrl}/${id}`, data);
   }
 
   delete(id: any): Observable<any> {
-    return this.http.delete(`${this.deleteUrl}/${id}`);
+    return this.http.delete(`${deleteUrl}/${id}`);
   }
 
   deleteAll(): Observable<any> {
-    return this.http.delete(this.url);
+    return this.http.delete(url);
   }
 
   findByBusinessName(business_name: any): Observable<any> {
-    return this.http.get(`${this.url}?business_name=${business_name}`);
+    return this.http.get(`${url}?business_name=${business_name}`);
   }
   
 }
+
 
 

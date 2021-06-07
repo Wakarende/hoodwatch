@@ -3,7 +3,6 @@
     <div class="input-group mb-3">
       <input type="text" class="form-control" placeholder="Search by title" [(ngModel)]="post_name" />
       <div class="input-group-append">
-        
       </div>
     </div>
   </div>
@@ -25,12 +24,11 @@
       <label><strong>Description:</strong></label> {{ currentPost.post_content }} </div>
     <div>
       <label><strong>Status:</strong></label> {{ currentPost.pub_date ? "Published" : "Pending" }} </div>
-    <a class="badge badge-warning" routerLink="/update/{{currentPost.id}}"> Edit </a>
+    <a class="badge badge-warning" routerLink="{{currentPost.id}}"> Edit </a>
   </div>
   <div *ngIf="!currentPost">
     <br />
     <p>Please click on a Tutorial...</p>
   </div>
 </div>
-
 <!-- <app-post-details></app-post-details> -->

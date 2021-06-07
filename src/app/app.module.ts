@@ -14,6 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { PostsComponent } from './components/posts/posts.component';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { NeighbourhoodDetailsComponent } from './components/neighbourhood-details/neighbourhood-details.component';
+import { BusinessListComponent } from './components/business-list/business-list.component';
+import { BusinessDetailsComponent } from './components/business-details/business-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { PostDetailsComponent } from './components/post-details/post-details.com
     UsersComponent,
     PostsComponent,
     PostListComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    NeighbourhoodDetailsComponent,
+    BusinessListComponent,
+    BusinessDetailsComponent
   ],
   imports: [
     BrowserModule,

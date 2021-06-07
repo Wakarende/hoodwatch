@@ -41,6 +41,14 @@ export class NeighbourhoodService {
   findByName(neighbourhood_name: any): Observable<any> {
     return this.http.get(`${this.url}?neighbourhood_name=${neighbourhood_name}`);
   }
+
+  getAll(): Observable<Neighbourhood[]> {
+    return this.http.get<Neighbourhood[]>(this.url);
+  }
+
+  get(id: any): Observable<Neighbourhood> {
+    return this.http.get<Neighbourhood>(`${this.url}/${id}`);
+  }
 }
 
 

@@ -1,6 +1,6 @@
 <p>business works!</p>
 
-<button (click)="findBusiness()">Business</button>
+<!-- <button (click)="findBusiness()">Business</button>
 <div *ngIf="business.length>0">
   <ul *ngFor="let business of business">
     <li>business name:{{business.business_name}}</li>
@@ -8,24 +8,53 @@
     <li>admin: {{business.profile}}</li>
     <li>business_email: {{business.business_email}}</li>
   </ul>
-</div>
+</div> -->
 
 <!-- Create Business  -->
+Create Business
 <div>
-  <form #businessPost="ngForm" (ngSubmit)="onSubmit(businessPost.value)" method="POST">
-    <input type="text" name="business_name" id="business_name" ngModel placeholder="business_name">
-    <input type="text" name="business_email" id="business_email" ngModel placeholder="business_email">
-    <input type="number" name="neighbourhood" id="neighbourhood" ngModel placeholder="neighbourhood">
-    <button type="submit">Add Business</button>
+  <form #businessPost="ngForm" (ngSubmit)="onSubmit(businessPost.value)" method="POST" class="form-group">
+    <input type="text" name="business_name" id="business_name" ngModel placeholder="business_name" class="form-control">
+    <input type="text" name="business_email" id="business_email" ngModel placeholder="business_email" class="form-control">
+    <input type="number" name="neighbourhood" id="neighbourhood" ngModel placeholder="neighbourhood" class="form-control">
+    <button type="submit" class="btn- btn-primary">Add Business</button>
   </form>
 </div>
 <!-- End Business  -->
 <!-- Update business  -->
-<form #updatebusiness="ngForm"
+<!-- <form #updatebusiness="ngForm"
   (ngSubmit)="updateBusiness(updatebusiness.value.id,updatebusiness.value)" method="POST">
   <input type="text" name="business_name" id="business_name" ngModel placeholder="business_name">
   <input type="text" name="business_email" id="business_email" ngModel placeholder="business_email">
   <input type="number" name="neighbourhood" id="neighbourhood" ngModel placeholder="neighbourhood">
   <button type="submit">Update Business</button>
-</form>
+</form> -->
 <!-- End Update Business  -->
+
+<!-- <div>
+  <div class="submit-form">
+    <div *businessPost="ngForm">
+      <div class="form-group">
+        <label for="business_name">Business Name</label>
+        <input type="text" class="form-control" id="business_name" required [(ngModel)]="business.business_name"
+          name="business_name" />
+      </div>
+      <div class="form-group">
+        <label for="description">Email</label>
+        <input class="form-control" id="business_email" required [(ngModel)]="business.business_email"
+          name="business_email" />
+      </div>
+      <div class="form-group">
+        <label for="neighbourhood">Neighbourhood</label>
+        <input class="form-control" id="neighbourhood" required [(ngModel)]="business.neighbourhood"
+          name="neighbourhood" type="number" />
+      </div>
+      <button (click)="saveBusiness()" class="btn btn-success">Submit</button>
+    </div>
+    <div *ngIf="submitted">
+      <h4>Tutorial was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newBusiness()">Add</button>
+    </div>
+  </div>
+</div> -->
+<app-business-list></app-business-list>

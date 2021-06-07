@@ -9,12 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessComponent implements OnInit {
 
-  business: Business[] = [];
+  business: Business[] ;
+
+  // business: Business = {
+  // business_name: '',
+  // business_email: '',
+  // neighbourhood: '',
+  // published:false
+  // };
+  // submitted = false;
 
   constructor(private businessservice: BusinessService) { }
 
   findBusiness() {
-    this.businessservice.fetchBusinessApi().subscribe(
+    this.businessservice.getAll().subscribe(
       (res) => {
         this.business = res
 
@@ -37,6 +45,35 @@ export class BusinessComponent implements OnInit {
     })
     console.warn(id)
   }
+  
+  // saveBusiness(): void {
+  //   const data = {
+  //     business_name: this.business.business_name,
+  //     business_email: this.business.business_email,
+  //     neighbourhood: this.business.neighbourhood
+  //   };
+
+  //   this.businessservice.create(data)
+  //     .subscribe(
+  //       response => {
+  //         console.log(response);
+  //         this.submitted = true;
+  //       },
+  //       error => {
+  //         console.log(error);
+  //       });
+  // }
+
+  // newBusiness(): void {
+  //   this.submitted = false;
+  //   this.business = {
+  //     business_name: '',
+  //     business_email: '',
+  //     neighbourhood: '',
+  //     published: false
+  //   };
+  // }
+
 
   ngOnInit(): void {
   }

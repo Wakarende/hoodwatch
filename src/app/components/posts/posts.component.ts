@@ -44,7 +44,7 @@ export class PostsComponent implements OnInit {
   newPosts(): void {
     this.submitted = false;
     this.posts = {
-      id: Number(''),
+      id: '',
       post_name: '',
       post_content: '',
       pub_date: false

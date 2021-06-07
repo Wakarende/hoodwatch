@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class NeighbourhoodComponent implements OnInit {
    
 
-  neighbourhood?:Neighbourhood[]=[];
+  neighbourhood?:Neighbourhood[];
   
 
   currentNeighbourhood?:Neighbourhood;

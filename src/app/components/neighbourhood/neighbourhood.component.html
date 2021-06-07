@@ -1,7 +1,7 @@
 <p>neighbourhood works!</p>
 <button (click)="findNeighbourhood()">Neighbourhood</button>
 
-<div *ngIf="neighbourhood.length>0">
+<div *ngIf="neighbourhood">
   <ul *ngFor="let neighbourhood of neighbourhood">
     <li>post name:{{neighbourhood.neighbourhood_name}}</li>
     <li>post content: {{neighbourhood.location}}</li>
@@ -10,13 +10,13 @@
   </ul>
 </div>
 
-<form #neighbourhoodPost="ngForm" (ngSubmit)="onSubmit(neighbourhoodPost.value)" method="POST">
-  <input type="text" name="neighbourhood_name" id="neighbourhood_name" ngModel placeholder="neighbourhood_name">
-  <input type="text" name="location" id="location" ngModel placeholder="location">
-  <input type="number" name="occupants" id="occupants" ngModel placeholder="occupants">
-  <input type="text" name="description" id="description" ngModel placeholder="description">
+<form #neighbourhoodPost="ngForm" (ngSubmit)="onSubmit(neighbourhoodPost.value)" method="POST" class="form-group">
+  <input type="text" name="neighbourhood_name" id="neighbourhood_name" ngModel placeholder="neighbourhood_name" class="form-control">
+  <input type="text" name="location" id="location" ngModel placeholder="location" class="form-control">
+  <input type="number" name="occupants" id="occupants" ngModel placeholder="occupants" class="form-control">
+  <input type="text" name="description" id="description" ngModel placeholder="description" class="form-control">
 
-  <button type="submit">Add Neighbourhood</button>
+  <button type="submit" class="btn btn-primary">Add Neighbourhood</button>
 </form>
 
   <form #updateneighbourhood="ngForm"
@@ -28,18 +28,20 @@
     <input type="text" name="description" id="description" ngModel placeholder="description">
     <button type="submit">Update Neighbourhood</button>
   </form> 
+
 <div class="list row">
   <div class="col-md-8">
     <div class="input-group mb-3">
+      
       <div class="input-group-append">
       </div>
     </div>
   </div>
   <div class="col-md-6">
-    <h4>Neighbourhood  List</h4>
+    <h4>Neighbourhood List</h4>
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let neighbourhood of neighbourhood; let i = index" [class.active]="i == currentIndex"
-        (click)="setActiveNeighbourhood(posts, i)"> {{ neighbourhood.neighbourhood_name}} </li>
+        (click)="setActiveNeighbourhood(neighbourhood, i)">{{ neighbourhood.neighbourhood_name}} </li>
     </ul>
     <button class="m-3 btn btn-sm btn-danger" (click)="removeAllNeighbourhoods()"> Remove All </button>
   </div>
@@ -52,12 +54,7 @@
     <div>
       <label><strong>Description:</strong></label> {{ currentNeighbourhood.description }} </div>
     <div>
-      <label><strong>Status:</strong></label> {{ currentPost.pub_date ? "Published" : "Pending" }} </div>
-    <div>
-      <label><strong>Title:</strong></label> {{ currentNeighbourhood.occupants}} 
-    </div>
-    
-    <a class="badge badge-warning" routerLink="/update/{{currentNeighbourhood.id}}"> Edit </a>
+    <a class="badge badge-warning" routerLink="{{currentNeighbourhood.id}}"> Edit </a>
   </div>
   <div *ngIf="!currentNeighbourhood">
     <br />
