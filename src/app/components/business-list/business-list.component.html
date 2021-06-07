@@ -21,9 +21,9 @@
       <label><strong>Title:</strong></label> {{ currentBusiness.business_name}} </div>
     <div>
       <label><strong>Description:</strong></label> {{ currentBusiness.business_email }} </div>
-    <div>
-      <label><strong>Status:</strong></label> {{ currentBusiness.pub_date ? "Published" : "Pending" }} </div>
-    <a class="badge badge-warning" routerLink="/update/{{currentBusiness.id}}"> Edit </a>
+    <!-- <div>
+      <label><strong>Status:</strong></label> {{ currentBusiness.published? "Published" : "Pending" }} </div> -->
+    <a class="badge badge-warning" routerLink="{{currentBusiness.id}}"> Edit </a>
   </div>
   <div *ngIf="!currentBusiness">
     <br />

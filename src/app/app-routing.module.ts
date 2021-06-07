@@ -6,6 +6,7 @@ import { PostsComponent } from './components/posts/posts.component';
 import { NgModule } from '@angular/core';
 import { Routes,RouterModule } from '@angular/router'
 import { PostDetailsComponent } from './components/post-details/post-details.component';
+import { BusinessDetailsComponent } from './components/business-details/business-details.component';
 const routes: Routes = [
 
   { path: '', redirectTo: 'neighbourhood', pathMatch: 'full' },
@@ -14,15 +15,18 @@ const routes: Routes = [
   { path: 'post/:id', component: PostDetailsComponent},
   { path: 'post/update/:id', component: PostDetailsComponent },
   { path: 'post/delete/:id', component: PostDetailsComponent },
+
   // neighbourhood 
   { path: 'neighbourhood', component: NeighbourhoodComponent },
   { path: 'neighbourhood/:id', component: NeighbourhoodDetailsComponent },
-  { path: 'update/:id', component: NeighbourhoodComponent },
-  { path: 'delete/:id', component: NeighbourhoodComponent },
+  { path: 'update/:id', component: NeighbourhoodDetailsComponent },
+  { path: 'delete/:id', component: NeighbourhoodDetailsComponent },
+
   // business 
   { path: 'business', component: BusinessComponent },
-  { path: 'business/update/:id', component: BusinessComponent },
-  { path: 'business/delete/:id', component: BusinessComponent },
+  { path: 'business/:id', component: BusinessDetailsComponent},
+  { path: 'business/update/:id', component: BusinessDetailsComponent },
+  { path: 'business/delete/:id', component: BusinessDetailsComponent },
 
 ];
 
