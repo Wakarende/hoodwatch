@@ -1,11 +1,12 @@
 <p>neighbourhood-details works!</p>
 <div>
-  <div *ngIf="currentNeighbourhood" class="edit-form">
-    <h4>Tutorial</h4>
+  <div *ngIf="currentNeighbourhood.id" class="edit-form">
+    <h4>Edit Neighbourhood</h4>
     <form>
       <div class="form-group">
-        <label for="neighbourhood_name">Post Name</label>
-        <input type="text" class="form-control" id="neighbourhood_name" [(ngModel)]="currentNeighbourhood.neighbourhood_name" name="neighbourhood_name" />
+        <label for="neighbourhood_name">Neighbourhood Name</label>
+        <input type="text" class="form-control" id="neighbourhood_name"
+          [(ngModel)]="currentNeighbourhood.neighbourhood_name" name="neighbourhood_name" />
       </div>
       <div class="form-group">
         <label for="description">Description</label>
@@ -13,12 +14,22 @@
           name="description" />
       </div>
       <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" class="form-control" id="location" [(ngModel)]="currentNeighbourhood.location"
+          name="location" />
+      </div>
+      <div class="form-group">
+        <label for="occupants">Occupants</label>
+        <input type="number" class="form-control" id="occupants" [(ngModel)]="currentNeighbourhood.occupants"
+          name="occupants" />
+      </div>
+      <div class="form-group">
         <label><strong>Status:</strong></label> {{ currentNeighbourhood.published ? "Published" : "Pending" }} </div>
     </form>
-    <button class="badge badge-primary mr-2" *ngIf="currentNeighbourhood.published" (click)="updateNeighbourhood(false)"> UnPublish
-    </button>
-    <button *ngIf="!currentNeighbourhood.published" class="badge badge-primary mr-2" (click)="updateNeighbourhood(true)"> Publish
-    </button>
+    <button class="badge badge-primary mr-2" *ngIf="currentNeighbourhood.published"
+      (click)="updatePublished(false)"> UnPublish </button>
+    <button *ngIf="!currentNeighbourhood.published" class="badge badge-primary mr-2"
+      (click)="updatePublished(true)"> Publish </button>
     <button class="badge badge-danger mr-2" (click)="deleteNeighbourhood()"> Delete </button>
     <button type="submit" class="badge badge-success mb-2" (click)="updateNeighbourhood()"> Update </button>
     <p>{{ message }}</p>

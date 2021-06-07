@@ -1,0 +1,33 @@
+<p>neighbourhood-list works!</p>
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <div class="input-group-append">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Neighbourhood List</h4>
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let neighbourhood of neighbourhood; let i = index"
+        [class.active]="i == currentIndex" (click)="setActiveNeighbourhood(neighbourhood, i)">
+        {{ neighbourhood.neighbourhood_name}} </li>
+    </ul>
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllNeighbourhoods()"> Remove All </button>
+  </div>
+</div>
+<div class="col-md-6">
+  <div *ngIf="currentNeighbourhood">
+    <h4>Tutorial</h4>
+    <div>
+      <label><strong>Title:</strong></label> {{ currentNeighbourhood.neighbourhood_name}} </div>
+    <div>
+      <label><strong>Description:</strong></label> {{ currentNeighbourhood.description }} </div>
+    <div>
+      <a class="badge badge-warning" routerLink="{{currentNeighbourhood.id}}"> Edit </a>
+    </div>
+    <div *ngIf="!currentNeighbourhood">
+      <br />
+      <p>Please click on a Tutorial...</p>
+    </div>
+  </div>

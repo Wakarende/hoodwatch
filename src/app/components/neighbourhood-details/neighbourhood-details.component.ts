@@ -42,11 +42,12 @@ export class NeighbourhoodDetailsComponent implements OnInit {
         });
   }
   // Update 
-  updateNeighbourbood(status: boolean): void {
+  updatePublished(status: boolean): void {
     const data = {
-      title: this.currentNeighbourhood.neighbourhood_name,
+      neighbourhood_name: this.currentNeighbourhood.neighbourhood_name,
       description: this.currentNeighbourhood.description,
-      published: status
+      location: this.currentNeighbourhood.location,
+      occupants: this.currentNeighbourhood.occupants,
     };
 
     this.neighbourhoodservice.update(this.currentNeighbourhood.id, data)
@@ -61,7 +62,7 @@ export class NeighbourhoodDetailsComponent implements OnInit {
         });
   }
 
-  updateNieghbourhood(): void {
+  updateNeighbourhood(): void {
     this.neighbourhoodservice.update(this.currentNeighbourhood.id, this.currentNeighbourhood)
       .subscribe(
         response => {

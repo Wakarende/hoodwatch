@@ -12,7 +12,10 @@ export class NeighbourhoodService {
 
   url ='http://127.0.0.1:8000/api/neighbourhood/'
   Updateurl ='http://127.0.0.1:8000/api/neighbourhood/update/'
-  deleteUrl = 'http://127.0.0.1:8000/api/neighbourhood/delete/'
+  deleteUrl = 'http://127.0.0.1:8000/api/neighbourhood/delete'
+  singleUrl = 'http://127.0.0.1:8000/api/neighbourhood/get'
+
+
   
 
   constructor(private http:HttpClient) { }
@@ -38,16 +41,16 @@ export class NeighbourhoodService {
     return this.http.delete(this.deleteUrl);
   }
 
-  findByName(neighbourhood_name: any): Observable<any> {
-    return this.http.get(`${this.url}?neighbourhood_name=${neighbourhood_name}`);
-  }
+  // findByName(neighbourhood_name: any): Observable<any> {
+  //   return this.http.get(`${this.url}?neighbourhood_name=${neighbourhood_name}`);
+  // }
 
   getAll(): Observable<Neighbourhood[]> {
     return this.http.get<Neighbourhood[]>(this.url);
   }
 
   get(id: any): Observable<Neighbourhood> {
-    return this.http.get<Neighbourhood>(`${this.url}/${id}`);
+    return this.http.get<Neighbourhood>(`${this.singleUrl}/${id}`);
   }
 }
 

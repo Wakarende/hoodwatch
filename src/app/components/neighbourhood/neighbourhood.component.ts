@@ -12,104 +12,91 @@ import { Component, OnInit } from '@angular/core';
 export class NeighbourhoodComponent implements OnInit {
    
 
-  neighbourhood?:Neighbourhood[];
-  
+  // neighbourhood?:Neighbourhood[];
+  neighbourhood: Neighbourhood = {
+    neighbourhood_name: '',
+    description: '',
+    occupants:'',
+    location:'',
+    published: false
+  };
+  submitted = false;
 
-  currentNeighbourhood?:Neighbourhood;
-  currentIndex = -1;
-  neighbourhood_name = '';
 
   constructor(private neighbourhoodservice:NeighbourhoodService) {
   
    }
   ngOnInit(): void {
-    this.retrieveNeighbourhood();
+    
   }
 
-  findNeighbourhood() {
-    this.neighbourhoodservice.fetchNeighbourhoodApi().subscribe(
-      (res) => {
-        this.neighbourhood = res
+  saveNeighbourhood(): void {
+    const data = {
+      neighbourhood_name: this.neighbourhood.neighbourhood_name,
+      description: this.neighbourhood.description,
+      occupants: this.neighbourhood.occupants,
+      location: this.neighbourhood.location
+    };
 
-      }, error => {
-        console.error(error)
-      }
-    );
-  }
-// create 
-  onSubmit(neighbourhood:any){
-    this.neighbourhoodservice.create(neighbourhood).subscribe((result) =>{
-      console.warn("result",result)
-    })
-    console.warn(neighbourhood)
-  }
-// update 
-  updateNeighbourhood(id:any, neighbourhood:Neighbourhood){
-    this.neighbourhoodservice.update(id,neighbourhood).subscribe((result)=>{
-      console.warn("result",result)
-    })
-    console.warn(id)
-  }
-  
-  // delete 
-  deleteNeighbourhood(id:any){
-    this.neighbourhoodservice.delete(id).subscribe(
-        response => {
-          console.log(response);
-          // this.router.navigate(['/tutorials']);
-        },
-        error => {
-          console.log(error);
-        });
-  }
-
-  // all neighbourhoods 
-  retrieveNeighbourhood(): void {
-    this.neighbourhoodservice.fetchNeighbourhoodApi()
-      .subscribe(
-        data => {
-          this.neighbourhood = data;
-          console.log(data);
-        },
-        error => {
-          console.log(error);
-        });
-  }
-
-  refreshList(): void {
-    this.retrieveNeighbourhood();
-    this.currentNeighbourhood = undefined;
-    this.currentIndex = -1;
-  }
-
-  setActiveNeighbourhood(neighbourhood: Neighbourhood, index: number): void {
-    this.currentNeighbourhood= neighbourhood;
-    this.currentIndex = index;
-  }
-
-  removeAllNeighbourhoods(): void {
-    this.neighbourhoodservice.deleteAll()
+    this.neighbourhoodservice.create(data)
       .subscribe(
         response => {
           console.log(response);
-          this.refreshList();
+          this.submitted = true;
         },
         error => {
           console.log(error);
         });
   }
 
-  // searchNeighbourhood(): void {
-  //   this.neighbourhood.findByName(this.neighbourhood_name)
-  //     .subscribe(
-  //       data => {
-  //         this.neighbourhood = data;
-  //         console.log(data);
-  //       },
-  //       error => {
-  //         console.log(error);
-  //       });
+  newNeighbourhood(): void {
+    this.submitted = false;
+    this.neighbourhood = {
+      neighbourhood_name: '',
+      description: '',
+      occupants:'',
+      location:'',
+      published: false
+    };
+  }
+
+  // findNeighbourhood() {
+  //   this.neighbourhoodservice.fetchNeighbourhoodApi().subscribe(
+  //     (res) => {
+  //       this.neighbourhood = res
+
+  //     }, error => {
+  //       console.error(error)
+  //     }
+  //   );
   // }
+// create 
+//   onSubmit(neighbourhood:any){
+//     this.neighbourhoodservice.create(neighbourhood).subscribe((result) =>{
+//       console.warn("result",result)
+//     })
+//     console.warn(neighbourhood)
+//   }
+// // update 
+//   updateNeighbourhood(id:any, neighbourhood:Neighbourhood){
+//     this.neighbourhoodservice.update(id,neighbourhood).subscribe((result)=>{
+//       console.warn("result",result)
+//     })
+//     console.warn(id)
+//   }
+  
+//   // delete 
+//   deleteNeighbourhood(id:any){
+//     this.neighbourhoodservice.delete(id).subscribe(
+//         response => {
+//           console.log(response);
+//           // this.router.navigate(['/tutorials']);
+//         },
+//         error => {
+//           console.log(error);
+//         });
+//   }
+  
 
 }
 

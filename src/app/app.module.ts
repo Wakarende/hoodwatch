@@ -17,6 +17,7 @@ import { PostDetailsComponent } from './components/post-details/post-details.com
 import { NeighbourhoodDetailsComponent } from './components/neighbourhood-details/neighbourhood-details.component';
 import { BusinessListComponent } from './components/business-list/business-list.component';
 import { BusinessDetailsComponent } from './components/business-details/business-details.component';
+import { NeighbourhoodListComponent } from './components/neighbourhood-list/neighbourhood-list.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { BusinessDetailsComponent } from './components/business-details/business
     PostDetailsComponent,
     NeighbourhoodDetailsComponent,
     BusinessListComponent,
-    BusinessDetailsComponent
+    BusinessDetailsComponent,
+    NeighbourhoodListComponent
   ],
   imports: [
     BrowserModule,

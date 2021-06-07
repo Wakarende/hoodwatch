@@ -1,6 +1,6 @@
 <p>post-details works!</p>
 <div>
-  <div *ngIf="currentPosts" class="edit-form">
+  <div *ngIf="currentPosts.id" class="edit-form">
     <h4>Tutorial</h4>
     <form>
       <div class="form-group">
@@ -17,7 +17,7 @@
     </form>
     <button class="badge badge-primary mr-2" *ngIf="currentPosts.pub_date" (click)="updatePublished(false)"> UnPublish
     </button>
-    <button *ngIf="!currentPosts.pub_date" class="badge badge-primary mr-2" (click)="updatePubDate(true)"> Publish
+    <button *ngIf="!currentPosts.pub_date" class="badge badge-primary mr-2" (click)="updatePublished(true)"> Publish
     </button>
     <button class="badge badge-danger mr-2" (click)="deletePosts()"> Delete </button>
     <button type="submit" class="badge badge-success mb-2" (click)="updatePosts()"> Update </button>

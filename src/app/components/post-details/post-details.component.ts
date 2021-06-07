@@ -39,10 +39,10 @@ export class PostDetailsComponent implements OnInit {
         });
   }
   // Update 
-  updatePubDate(status: boolean): void {
+  updatePublished(status: boolean): void {
     const data = {
-      title: this.currentPosts.post_name,
-      description: this.currentPosts.post_content,
+      post_name: this.currentPosts.post_name,
+      post_content: this.currentPosts.post_content,
       published: status
     };
 

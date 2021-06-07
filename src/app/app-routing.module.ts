@@ -9,15 +9,17 @@ import { PostDetailsComponent } from './components/post-details/post-details.com
 const routes: Routes = [
 
   { path: '', redirectTo: 'neighbourhood', pathMatch: 'full' },
+  // post 
   { path: 'post', component: PostsComponent },
   { path: 'post/:id', component: PostDetailsComponent},
   { path: 'post/update/:id', component: PostDetailsComponent },
   { path: 'post/delete/:id', component: PostDetailsComponent },
+  // neighbourhood 
   { path: 'neighbourhood', component: NeighbourhoodComponent },
-  // { path: ':id', component: NeighbourhoodDetailsComponent },
-
+  { path: 'neighbourhood/:id', component: NeighbourhoodDetailsComponent },
   { path: 'update/:id', component: NeighbourhoodComponent },
   { path: 'delete/:id', component: NeighbourhoodComponent },
+  // business 
   { path: 'business', component: BusinessComponent },
   { path: 'business/update/:id', component: BusinessComponent },
   { path: 'business/delete/:id', component: BusinessComponent },
