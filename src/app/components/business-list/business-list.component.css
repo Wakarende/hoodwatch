@@ -1,0 +1,4 @@
+.list-flex{
+  display: flex;
+  flex-direction: row;
+}

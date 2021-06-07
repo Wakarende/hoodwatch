@@ -1,25 +1,66 @@
-<p>posts works!</p>
+<app-post-list></app-post-list>
 <!-- Create Posts  -->
-<div>
+<div class="container">
+<div class="card p-4">
+  <h4 class="text-center mb-3">Add Post</h4>
   <div class="submit-form">
     <div *ngIf="!submitted">
-      <div class="form-group">
+      <div class="form-group mb-2">
         <label for="title">Title</label>
-        <input type="text" class="form-control" id="post_name" required [(ngModel)]="posts.post_name" name="post_name" />
+        <input type="text" class="form-control" id="post_name" required [(ngModel)]="posts.post_name"
+          name="post_name" />
       </div>
-      <div class="form-group">
+      <div class="form-group mb-2">
         <label for="description">Description</label>
         <input class="form-control" id="post_content" required [(ngModel)]="posts.post_content" name="post_content" />
       </div>
-      <button (click)="savePosts()" class="btn btn-success">Submit</button>
+      <button (click)="savePosts()" class="btn btn-success btn-sm mt-3">Submit</button>
     </div>
     <div *ngIf="submitted">
       <h4>Tutorial was submitted successfully!</h4>
-      <button class="btn btn-success" (click)="newPosts()">Add</button>
+      <button class="btn btn-success btn-sm mt-3" (click)="newPosts()">Add</button>
     </div>
   </div>
 </div>
+</div>
 <!-- End Create posts  -->
-<app-post-list></app-post-list>
-
-<!-- <app-post-details></app-post-details> -->
+<!-- Footer  -->
+<footer class="site-footer mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">Your go to app for neighbourhood cohesiveness and collaboration. </p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <!-- <h6>Categories</h6> -->
+        <ul class="footer-links">
+        </ul>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <h6 class="text-black">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/post">Posts</a></li>
+          <li><a href="/business">Business</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by <a href="#">Joy Kirii</a>. </p>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <!-- <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="bi bi-twitter"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i></a></li>
+        </ul> -->
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer  -->

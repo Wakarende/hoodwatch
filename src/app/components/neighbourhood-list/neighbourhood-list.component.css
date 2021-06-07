@@ -1,0 +1,21 @@
+
+
+.remove-all-btn{
+  background-color: #0D6FED;
+  border: 1px solid black;
+  color: white;
+}
+.remove-all-btn:hover{
+  color: black;
+}
+
+.edit-btn{
+  background-color: #0D6FED;
+  color: white;
+  border: 1px solid black;
+}
+
+.edit-btn:hover{
+  color: black;
+}
+

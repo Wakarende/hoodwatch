@@ -1,25 +1,68 @@
-<p>post-details works!</p>
-<div>
+<!-- Edit form  -->
+<div class="container">
   <div *ngIf="currentPosts.id" class="edit-form">
-    <h4>Tutorial</h4>
+    <h4 class="text-center mb-5"> Edit Post</h4>
     <form>
-      <div class="form-group">
+      <div class="form-group mb-2">
         <label for="post_name">Post Name</label>
         <input type="text" class="form-control" id="post_name" [(ngModel)]="currentPosts.post_name" name="post_name" />
       </div>
-      <div class="form-group">
+      <div class="form-group mb-2">
         <label for="post_content">Post Content</label>
         <input type="text" class="form-control" id="post_content" [(ngModel)]="currentPosts.post_content"
           name="post_content" />
       </div>
-      <div class="form-group">
+      <div class="form-group mb-2">
         <label><strong>Status:</strong></label> {{ currentPosts.pub_date ? "pub_date" : "Pending" }} </div>
     </form>
-    <button class="badge badge-primary mr-2" *ngIf="currentPosts.pub_date" (click)="updatePublished(false)"> UnPublish
+    <button class="btn-sm btn btn-primary mr-2 detail-btn" *ngIf="currentPosts.pub_date" (click)="updatePublished(false)"> UnPublish
     </button>
-    <button *ngIf="!currentPosts.pub_date" class="badge badge-primary mr-2" (click)="updatePublished(true)"> Publish
+    <button *ngIf="!currentPosts.pub_date" class="btn btn-sm btn-primary mr-2 detail-btn"
+      (click)="updatePublished(true)"> Publish
     </button>
-    <button class="badge badge-danger mr-2" (click)="deletePosts()"> Delete </button>
-    <button type="submit" class="badge badge-success mb-2" (click)="updatePosts()"> Update </button>
+    <button class="btn btn-danger btn-sm mr-2 detail-btn" (click)="deletePosts()"> Delete </button>
+    <button type="submit" class="btn btn-success  btn-sm " (click)="updatePosts()"> Update </button>
     <p>{{ message }}</p>
   </div>
+</div>
+  <!-- End Edit Form  -->
+<!-- Footer  -->
+<footer class="site-footer mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <h6>About</h6>
+        <p class="text-justify">Your go to app for neighbourhood cohesiveness and collaboration. </p>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <!-- <h6>Categories</h6> -->
+        <ul class="footer-links">
+        </ul>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <h6 class="text-black">Quick Links</h6>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/post">Posts</a></li>
+          <li><a href="/business">Business</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by <a href="#">Joy Kirii</a>. </p>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <!-- <ul class="social-icons">
+          <li><a class="facebook" href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a class="twitter" href="#"><i class="bi bi-twitter"></i></a></li>
+          <li><a class="linkedin" href="#"><i class="bi bi-linkedin"></i></a></li>
+        </ul> -->
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Footer  -->
