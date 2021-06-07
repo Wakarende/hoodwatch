@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 const url = 'http://127.0.0.1:8000/api/business/'
 const updateUrl = 'http://127.0.0.1:8000/api/business/update'
 const deleteUrl = 'http://127.0.0.1:8000/api/business/delete'
+const getUrl = 'http://127.0.0.1:8000/api/business/get'
+
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +22,7 @@ export class BusinessService {
 
   }
   get(id: any): Observable<Business> {
-    return this.http.get(`${url}/${id}`);
+    return this.http.get(`${getUrl}/${id}`);
   }
 
   create(data: any): Observable<any> {
@@ -28,11 +30,11 @@ export class BusinessService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${updateUrl}/${id}`, data);
+    return this.http.put(`${updateUrl}/${id}/`, data);
   }
 
   delete(id: any): Observable<any> {
-    return this.http.delete(`${deleteUrl}/${id}`);
+    return this.http.delete(`${deleteUrl}/${id}/`);
   }
 
   deleteAll(): Observable<any> {

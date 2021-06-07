@@ -61,7 +61,7 @@ export class BusinessDetailsComponent implements OnInit {
         });
   }
 
-  updatePost(): void {
+  updateBusiness(): void {
     this.businessservice.update(this.currentBusiness.id, this.currentBusiness)
       .subscribe(
         response => {
@@ -73,7 +73,7 @@ export class BusinessDetailsComponent implements OnInit {
         });
   }
 
-  deletePost(): void {
+  deleteBusiness(): void {
     this.businessservice.delete(this.currentBusiness.id)
       .subscribe(
         response => {
@@ -84,10 +84,4 @@ export class BusinessDetailsComponent implements OnInit {
           console.log(error);
         });
   }
-
-
-
-
-
-
 }

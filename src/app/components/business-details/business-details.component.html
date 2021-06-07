@@ -1,30 +1,36 @@
 <p>business-details works!</p>
 <div class="container">
   <div>
-    <div *ngIf="!currentPost.id" class="edit-form">
+    <div *ngIf="currentBusiness.id" class="edit-form">
       <h4>Tutorial</h4>
       <form>
         <div class="form-group">
-          <label for="title">Title</label>
-          <input type="text" class="form-control" id="post_name" [(ngModel)]="currentPost.post_name" name="post_name" />
+          <label for="title">Business Name</label>
+          <input type="text" class="form-control" id="business_name" [(ngModel)]="currentBusiness.business_name"
+            name="business_name" />
         </div>
         <div class="form-group">
-          <label for="description">Description</label>
-          <input type="text" class="form-control" id="post_content" [(ngModel)]="currentPost.post_content"
-            name="post_content" />
+          <label for="description">Business Email</label>
+          <input type="text" class="form-control" id="business_email" [(ngModel)]="currentBusiness.business_email"
+            name="business_email" />
         </div>
         <div class="form-group">
-          <label><strong>Status:</strong></label> {{ currentPost.pub_date ? "Published" : "Pending" }} </div>
+          <label for="description">Neighbourhood</label>
+          <input type="text" class="form-control" id="neighbourhood" [(ngModel)]="currentBusiness.neighbourhood"
+            name="neighbourhood" />
+        </div>
+        <div class="form-group">
+          <label><strong>Status:</strong></label> {{ currentBusiness.published ? "Published" : "Pending" }} </div>
       </form>
-      <button class="badge badge-primary mr-2" *ngIf="currentPost.pub_date" (click)="updatePublished(false)"> UnPublish
+      <button class="badge badge-primary mr-2" *ngIf="currentBusiness.published" (click)="updatePublished(false)"> UnPublish
       </button>
-      <button *ngIf="!currentPost.pub_date" class="badge badge-primary mr-2" (click)="updatePublished(true)"> Publish
+      <button *ngIf="!currentBusiness.published" class="badge badge-primary mr-2" (click)="updatePublished(true)"> Publish
       </button>
-      <button class="badge badge-danger mr-2" (click)="deletePost()"> Delete </button>
-      <button type="submit" class="badge badge-success mb-2" (click)="updatePost()"> Update </button>
+      <button class="badge badge-danger mr-2" (click)="deleteBusiness()"> Delete </button>
+      <button type="submit" class="badge badge-success mb-2" (click)="updateBusiness()"> Update </button>
       <p>{{ message }}</p>
     </div>
-    <div *ngIf="!currentPost.id">
+    <div *ngIf="!currentBusiness.id">
     <br />
     <p>Cannot access this Tutorial...</p>
     </div>
