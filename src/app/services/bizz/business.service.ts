@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 const url = 'https://neighborhood-joy.herokuapp.com/api/business/'
 const updateUrl = 'https://neighborhood-joy.herokuapp.com/api/business/update/'
 const deleteUrl = 'https://neighborhood-joy.herokuapp.com/api/business/delete/'
-const getUrl = 'https://neighborhood-joy.herokuapp.com/api/business/get/'
+const getUrl = 'https://neighborhood-joy.herokuapp.com/api/business/get'
 
 
 @Injectable({

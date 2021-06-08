@@ -13,7 +13,7 @@ export class NeighbourhoodService {
   url ='https://neighborhood-joy.herokuapp.com/api/neighbourhood/'
   Updateurl ='https://neighborhood-joy.herokuapp.com/api/neighbourhood/update/'
   deleteUrl = 'https://neighborhood-joy.herokuapp.com/api/neighbourhood/delete/'
-  singleUrl = 'https://neighborhood-joy.herokuapp.com/api/neighbourhood/get/'
+  singleUrl = 'https://neighborhood-joy.herokuapp.com/api/neighbourhood/get'
 
 
   
