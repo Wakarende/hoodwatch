@@ -13,11 +13,11 @@
           name="post_content" />
       </div>
       <div class="form-group mb-2">
-        <label><strong>Status:</strong></label> {{ currentPosts.pub_date ? "pub_date" : "Pending" }} </div>
+        <label><strong>Status:</strong></label> {{ currentPosts.published ? "Published" : "Pending" }} </div>
     </form>
-    <button class="btn-sm btn btn-primary mr-2 detail-btn" *ngIf="currentPosts.pub_date" (click)="updatePublished(false)"> UnPublish
+    <button class="btn-sm btn btn-primary mr-2 detail-btn" *ngIf="currentPosts.published" (click)="updatePublished(false)"> UnPublish
     </button>
-    <button *ngIf="!currentPosts.pub_date" class="btn btn-sm btn-primary mr-2 detail-btn"
+    <button *ngIf="!currentPosts.published" class="btn btn-sm btn-primary mr-2 detail-btn"
       (click)="updatePublished(true)"> Publish
     </button>
     <button class="btn btn-danger btn-sm mr-2 detail-btn" (click)="deletePosts()"> Delete </button>

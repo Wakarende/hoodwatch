@@ -12,7 +12,7 @@ export class PostDetailsComponent implements OnInit {
   currentPosts: Posts= {
     post_name: '',
     post_content: '',
-    pub_date: false
+    published: false
   };
   message = '';
 
@@ -49,7 +49,7 @@ export class PostDetailsComponent implements OnInit {
     this.postsservice.update(this.currentPosts.id, data)
       .subscribe(
         response => {
-          this.currentPosts.pub_date = status;
+          this.currentPosts.published= status;
           console.log(response);
           this.message = response.message;
         },
