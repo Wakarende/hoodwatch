@@ -25,7 +25,7 @@
           <label><strong>Description:</strong></label> {{ currentNeighbourhood.description }} 
         </div>
         <div>
-          <a class="btn btn-sm edit-btn mt-2" routerLink="{{currentNeighbourhood.id}}"> Edit </a>
+          <a class="btn btn-sm edit-btn mt-2" routerLink="neighbourhood/{{currentNeighbourhood.id}}"> Edit </a>
         </div>
         <div *ngIf="!currentNeighbourhood">
           <br />

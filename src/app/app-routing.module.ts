@@ -9,7 +9,7 @@ import { PostDetailsComponent } from './components/post-details/post-details.com
 import { BusinessDetailsComponent } from './components/business-details/business-details.component';
 const routes: Routes = [
 
-  { path: '', redirectTo: 'neighbourhood', pathMatch: 'full' },
+  { path: '', component: NeighbourhoodComponent },
   // post 
   { path: 'post', component: PostsComponent },
   { path: 'post/:id', component: PostDetailsComponent},
