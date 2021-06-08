@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 
-const url = 'http://127.0.0.1:8000/api/business/'
-const updateUrl = 'http://127.0.0.1:8000/api/business/update'
-const deleteUrl = 'http://127.0.0.1:8000/api/business/delete'
-const getUrl = 'http://127.0.0.1:8000/api/business/get'
+const url = 'https://neighborhood-joy.herokuapp.com/api/business/'
+const updateUrl = 'https://neighborhood-joy.herokuapp.com/api/business/update/'
+const deleteUrl = 'https://neighborhood-joy.herokuapp.com/api/business/delete/'
+const getUrl = 'https://neighborhood-joy.herokuapp.com/api/business/get/'
 
 
 @Injectable({

@@ -10,10 +10,10 @@ import { Observable } from 'rxjs';
 })
 export class NeighbourhoodService {
 
-  url ='http://127.0.0.1:8000/api/neighbourhood/'
-  Updateurl ='http://127.0.0.1:8000/api/neighbourhood/update/'
-  deleteUrl = 'http://127.0.0.1:8000/api/neighbourhood/delete'
-  singleUrl = 'http://127.0.0.1:8000/api/neighbourhood/get'
+  url ='https://neighborhood-joy.herokuapp.com/api/neighbourhood/'
+  Updateurl ='https://neighborhood-joy.herokuapp.com/api/neighbourhood/update/'
+  deleteUrl = 'https://neighborhood-joy.herokuapp.com/api/neighbourhood/delete/'
+  singleUrl = 'https://neighborhood-joy.herokuapp.com/api/neighbourhood/get/'
 
 
   

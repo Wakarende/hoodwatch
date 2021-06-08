@@ -9,10 +9,10 @@ import { Injectable } from '@angular/core';
 })
 export class PostsService {
 
-  url = 'http://127.0.0.1:8000/api/post/'
-  updateUrl = 'http://127.0.0.1:8000/api/post/update'
-  deleteUrl = 'http://127.0.0.1:8000/api/post/delete'
-  getUrl = 'http://127.0.0.1:8000/api/post/get'
+  url = 'https://neighborhood-joy.herokuapp.com/api/post/'
+  updateUrl = 'https://neighborhood-joy.herokuapp.com/api/post/update/'
+  deleteUrl = 'https://neighborhood-joy.herokuapp.com/api/post/delete/'
+  getUrl = 'https://neighborhood-joy.herokuapp.com/api/post/get/'
 
   constructor(private http:HttpClient) { }
 
