@@ -47,7 +47,7 @@ export class PostsComponent implements OnInit {
       id: '',
       post_name: '',
       post_content: '',
-      pub_date: false
+      published: false
     };
   }
 
