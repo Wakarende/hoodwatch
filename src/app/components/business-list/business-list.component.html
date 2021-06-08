@@ -1,33 +1,33 @@
-<p>business-list works!</p>
-<div class="list row">
-  <div class="col-md-8">
-    <div class="input-group mb-3">
+<div class="container">
+  <div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
       </div>
     </div>
-  </div>
-  <div class="col-md-6 mb-5">
-    <h4>Business List</h4>
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let business of business; let i = index" [class.active]="i == currentIndex"
-        (click)="setActiveBusiness(business, i)"> {{ business.business_name}} </li>
-    </ul>
-    <button class="m-3 btn btn-sm btn-danger mb-5" (click)="removeAllBusiness()"> Remove All </button>
-  </div>
-
-<div class="col-md-6">
-  <div *ngIf="currentBusiness">
-    <h4>Tutorial</h4>
-    <div>
-      <label><strong>Title:</strong></label> {{ currentBusiness.business_name}} </div>
-    <div>
-      <label><strong>Description:</strong></label> {{ currentBusiness.business_email }} </div>
-    <!-- <div>
-      <label><strong>Status:</strong></label> {{ currentBusiness.published? "Published" : "Pending" }} </div> -->
-    <a class="badge badge-warning" routerLink="{{currentBusiness.id}}"> Edit </a>
-  </div>
-  <div *ngIf="!currentBusiness">
-    <br />
-    <p>Please click on a Business...</p>
+    <div class="col-md-6 mb-5">
+      <h4 class="text-center mb-5">Business List</h4>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let business of business; let i = index" [class.active]="i == currentIndex"
+          (click)="setActiveBusiness(business, i)"> {{ business.business_name}} </li>
+      </ul>
+      <!-- <button class="m-3 btn btn-sm btn-danger mb-5" (click)="removeAllBusiness()"> Remove All </button> -->
+    </div>
+    <div class="col-md-6 business-list">
+      <div *ngIf="currentBusiness">
+        <h4 class="text-center">Business</h4>
+        <div>
+          <label><strong>Business:</strong></label> {{ currentBusiness.business_name}} </div>
+        <div>
+          <label><strong>Email:</strong></label> {{ currentBusiness.business_email }} </div>
+        <!-- <div>
+        <label><strong>Status:</strong></label> {{ currentBusiness.published? "Published" : "Pending" }} </div> -->
+        <a class="btn btn-sm btn-warning" routerLink="{{currentBusiness.id}}"> Edit </a>
+      </div>
+      <div *ngIf="!currentBusiness">
+        <br />
+        <p>Please click on a Business...</p>
+      </div>
+    </div>
   </div>
 </div>
 

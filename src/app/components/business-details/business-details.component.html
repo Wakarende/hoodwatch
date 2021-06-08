@@ -1,33 +1,35 @@
-<p>business-details works!</p>
+
 <div class="container">
   <div>
     <div *ngIf="currentBusiness.id" class="edit-form">
-      <h4>Tutorial</h4>
+      <h4 class="text-center mb-5">Edit Business</h4>
       <form>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <label for="title">Business Name</label>
           <input type="text" class="form-control" id="business_name" [(ngModel)]="currentBusiness.business_name"
             name="business_name" />
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <label for="description">Business Email</label>
           <input type="text" class="form-control" id="business_email" [(ngModel)]="currentBusiness.business_email"
             name="business_email" />
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <label for="description">Neighbourhood</label>
           <input type="text" class="form-control" id="neighbourhood" [(ngModel)]="currentBusiness.neighbourhood"
             name="neighbourhood" />
         </div>
-        <div class="form-group">
+        <div class="form-group mb-2">
           <label><strong>Status:</strong></label> {{ currentBusiness.published ? "Published" : "Pending" }} </div>
       </form>
-      <button class="badge badge-primary mr-2" *ngIf="currentBusiness.published" (click)="updatePublished(false)"> UnPublish
+      <button class="btn btn-sm btn-primary mr-2 detail-btn" *ngIf="currentBusiness.published"
+        (click)="updatePublished(false)"> UnPublish
       </button>
-      <button *ngIf="!currentBusiness.published" class="badge badge-primary mr-2" (click)="updatePublished(true)"> Publish
+      <button *ngIf="!currentBusiness.published" class="btn btn-sm btn-primary mr-2 detail-btn"
+        (click)="updatePublished(true)"> Publish
       </button>
-      <button class="badge badge-danger mr-2" (click)="deleteBusiness()"> Delete </button>
-      <button type="submit" class="badge badge-success mb-2" (click)="updateBusiness()"> Update </button>
+      <button class="btn btn-sm btn-danger mr-2 detail-btn" (click)="deleteBusiness()"> Delete </button>
+      <button type="submit" class="btn btn-sm btn-success detail-btn" (click)="updateBusiness()"> Update </button>
       <p>{{ message }}</p>
     </div>
     <div *ngIf="!currentBusiness.id">
