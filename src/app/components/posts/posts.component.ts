@@ -13,7 +13,7 @@ export class PostsComponent implements OnInit {
     id:Number(''),
     post_name: '',
     post_content: '',
-    pub_date: false
+    published: false
   };
   submitted = false;
 
@@ -50,6 +50,5 @@ export class PostsComponent implements OnInit {
       published: false
     };
   }
-
 }
 
