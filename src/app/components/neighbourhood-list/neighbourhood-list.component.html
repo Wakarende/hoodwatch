@@ -25,6 +25,8 @@
           <label><strong>Description:</strong></label> {{ currentNeighbourhood.description }} 
         </div>
         <div>
+          <label><strong>Location:</strong></label> {{ currentNeighbourhood.location }} </div>
+        <div>
           <a class="btn btn-sm edit-btn mt-2" routerLink="neighbourhood/{{currentNeighbourhood.id}}"> Edit </a>
         </div>
         <div *ngIf="!currentNeighbourhood">
